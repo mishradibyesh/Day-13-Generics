@@ -3,12 +3,12 @@ package com.bl.generics;
 public class CalculateMaxOfThreeValues {
 
 	public static void main(String[] args) {
-		// Three Float objects initialization
-		Float firstNumber = 54.34f ;
-		Float secondNumber = 34.33f ;
-		Float thirdNumber = 54.65f ;
+		// Three String objects initialization
+		String firstNumber = "ram";
+		String secondNumber = "ramesh" ;
+		String thirdNumber = "rama" ;
 
-		Float max = firstNumber ;
+		String max = firstNumber ;
 
 		// using compareTo method
 		if(secondNumber.compareTo(max) > 0) {
@@ -18,8 +18,8 @@ public class CalculateMaxOfThreeValues {
 			max = thirdNumber ;
 		}
 
-		// printing the maximum among three Float objects
-		System.out.println("Maximum number is "+max);
+		// printing the maximum among three String objects
+		System.out.println("Maximum string is "+max);
 	}
 
 }

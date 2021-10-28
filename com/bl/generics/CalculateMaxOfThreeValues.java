@@ -22,6 +22,10 @@ public class CalculateMaxOfThreeValues  {
 				maximum = arr[i];
 			}
 		}
-		System.out.println("maximum is "+maximum);
+		printMax(maximum);
 	}
+	public static <E> void printMax(E max) {
+		System.out.println("Amongst the three the maximum is " + max);		
+	}
+
 }

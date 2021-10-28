@@ -1,17 +1,30 @@
 package com.bl.generics;
 
-public class CalculateMaxOfThreeValues {
+public class CalculateMaxOfThreeValues <T extends Comparable> {
+	T firstValue, secondValue, thirdValue ;
+
+	//constructor
+	public CalculateMaxOfThreeValues(T firstValue, T secondValue, T thirdValue) {
+		super();
+		this.firstValue = firstValue;
+		this.secondValue = secondValue;
+		this.thirdValue = thirdValue;
+	}
 
 	public static void main(String[] args) {
-		findMax(10,30,12);  // finding maximum for integers
-		findMax(10.33f,10.44f,10.45f); // finding maximum for floats
-		findMax("ram","ramesh","rama"); // finding maximum for Strings
-		
+		//providing the type using generics at runtime
+		CalculateMaxOfThreeValues<Integer> maxInt = new CalculateMaxOfThreeValues<Integer>(10,30,12);
+		maxInt.findMax();
+
+		CalculateMaxOfThreeValues<Float> maxFloat = new CalculateMaxOfThreeValues<Float>(10.33f,10.44f,10.45f);
+		maxFloat.findMax();
+
+		CalculateMaxOfThreeValues<String> maxString = new CalculateMaxOfThreeValues<String>("ram","ramesh","rama");
+		maxString.findMax();
 	}
- 
-	// reliability to choose any type of variable at method level
-	public static <E extends Comparable> void findMax(E firstValue , E secondValue , E thirdValue ) {
-		E max = firstValue ;
+
+	public <E extends Comparable> void findMax() {
+		T max = firstValue ;
 
 		// using compareTo method
 		if(secondValue.compareTo(max) > 0) {
